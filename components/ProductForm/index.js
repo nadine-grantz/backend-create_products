@@ -1,5 +1,6 @@
 import { StyledForm, StyledHeading, StyledLabel } from "./ProductForm.styled";
 import { StyledButton } from "../Button/Button.styled";
+import useSWR from "swr";
 
 export default function ProductForm() {
   async function handleSubmit(event) {
