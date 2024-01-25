@@ -9,7 +9,7 @@ export default async function handler(request, response) {
     return response.status(200).json(products);
   }
 
-  if (request.method === "GET") {
+  if (request.method === "POST") {
     try {
       const productData = request.body;
       await Product.create(productData);

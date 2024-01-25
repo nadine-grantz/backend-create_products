@@ -3,7 +3,7 @@ import { StyledButton } from "../Button/Button.styled";
 import useSWR from "swr";
 
 export default function ProductForm() {
-  const { mutate } = useSWR("/api/product");
+  const { mutate } = useSWR("/api/products");
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -15,7 +15,7 @@ export default function ProductForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(jokeData),
+      body: JSON.stringify(productData),
     });
 
     if (response.ok) {
