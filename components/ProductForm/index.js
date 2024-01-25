@@ -3,6 +3,7 @@ import { StyledButton } from "../Button/Button.styled";
 import useSWR from "swr";
 
 export default function ProductForm() {
+  const { mutate } = useSWR("/api/product");
   async function handleSubmit(event) {
     event.preventDefault();
 

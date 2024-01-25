@@ -10,13 +10,14 @@ export default async function handler(request, response) {
   }
 
   if (request.method === "GET") {
-    const productData = request.body;
-  await Product.create(productData);
+    try {
+      const productData = request.body;
+      await Product.create(productData);
 
-  response.status(201).json({status:"Product created"});
-  } catch (error) {
-    console.log(error)
-    response.status(400).json ({error:error.message})
+      response.status(201).json({ status: "Product created" });
+    } catch (error) {
+      console.log(error);
+      response.status(400).json({ error: error.message });
+    }
   }
-}
 }
